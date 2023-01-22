@@ -9,18 +9,23 @@ use App\Models\LogAcceso;
 use Session;
 class LoginController extends Controller
 {
-    function login(){
+    function login()
+    {
         return view('login');
     }
-    function check_login(Request $request){  //metodo que revisa los valores ingresados en los campos de la tabla sql
-        $request->validate([
+    function check_login(Request $request)
+    {
+        //metodo que revisa los valores ingresados en los campos de la tabla sql
+        $request->validate(
+            [
             'NickName' => 'required',
             'PasswordHASH' => 'required',
-        ]);
+            ]
+        );
        
-        $consulta = Usuario::where('NickName',$request->NickName)->get(); //permite comprobar si existe el usuario
-        $cuantos = count ($consulta);//cuenta cuantos registros hay
-        if($cuantos >0 and Hash::check($request->PasswordHASH, $consulta[0]->PasswordHASH)){
+        $consulta = Usuario::where('NickName', $request->NickName)->get(); //permite comprobar si existe el usuario
+        $cuantos = count($consulta);//cuenta cuantos registros hay
+        if($cuantos >0 and Hash::check($request->PasswordHASH, $consulta[0]->PasswordHASH)) {
             session_start();
             $usuarioData = Usuario::where(['NickName'=>$request->NickName])->get();
            
@@ -50,7 +55,8 @@ class LoginController extends Controller
        
     }
 
-    function logout(){
+    function logout()
+    {
         session()->forget(['usuarioData']);
         return redirect('/');
     }

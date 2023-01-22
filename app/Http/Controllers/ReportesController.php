@@ -35,7 +35,7 @@ class ReportesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -48,28 +48,27 @@ class ReportesController extends Controller
      * @Rafael1108
      * Muestra formulario modales de parámetros. 
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         switch ($id) {
 
-            case 2:
-                /* retorna la vista en funcion del id del reporte que se requiere*/
-                return view('reportes.nuevosClientes');
+        case 2:
+            /* retorna la vista en funcion del id del reporte que se requiere*/
+            return view('reportes.nuevosClientes');
                 break;
 
-            default:
-                return response()->json(['error' => 'Reporte no encontrado!'], 500);
+        default:
+            return response()->json(['error' => 'Reporte no encontrado!'], 500);
         }
     }
 
     /**
-     * 
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -77,11 +76,10 @@ class ReportesController extends Controller
     }
 
     /**
-     * 
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -92,7 +90,7 @@ class ReportesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -107,19 +105,19 @@ class ReportesController extends Controller
      * @Rafael1108
      * Método POST para obtener los reportes renderizados y exportables.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function showReport(Request $request, $id)
     {
         switch ($id) {
 
-            case 2:
-                /* retorna la vista en funcion del id del reporte que se requiere*/
-                return $this->rptNuevosClientes($request);
-            default:
-                return response()->json(['error' => 'Reporte no encontrado!'], 500);
+        case 2:
+            /* retorna la vista en funcion del id del reporte que se requiere*/
+            return $this->rptNuevosClientes($request);
+        default:
+            return response()->json(['error' => 'Reporte no encontrado!'], 500);
         }
     }
 
@@ -129,7 +127,7 @@ class ReportesController extends Controller
      * Método para Generar reporte de Nuevos clientes
      * la funcion requeire el request del POST.
      *
-     * @param  \Illuminate\Http\Request  $request 
+     * @param  \Illuminate\Http\Request $request 
      * @return Barryvdh\DomPDF\Facade\Pdf
      */
     private function rptNuevosClientes(Request $request)

@@ -11,21 +11,21 @@ use BenSampo\Enum\Enum;
  */
 final class TipoDocumentoCompraEnum extends Enum
 {
-    const Factura = 1;
-    const NotaVenta = 2;
-    const LiquidacionCompra = 3;
+    const FACTURA = 1;
+    const NOTAVENTA = 2;
+    const LIQUIDACIONCOMPRA = 3;
 
     public static function getNombre(int $value): string
     {
         switch ($value) {
-            case self::NotaVenta:
-                return '>Nota de Venta';
+        case self::NotaVenta:
+            return '>Nota de Venta';
                 break;
-            case self::LiquidacionCompra:
-                return 'Liquidación Compras';
+        case self::LiquidacionCompra:
+            return 'Liquidación Compras';
                 break;
-            default:
-                return self::getKey($value);
+        default:
+            return self::getKey($value);
         }
     }
 }

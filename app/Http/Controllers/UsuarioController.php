@@ -14,7 +14,6 @@ class UsuarioController extends Controller
     }
 
     /**
-     * 
      * Muestra la vista de todas las categorias.
      *
      * @return \Illuminate\Http\Response
@@ -38,14 +37,15 @@ class UsuarioController extends Controller
      * Almacena la usuario
      *  recién creada en el almacenamiento.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         
         
-        $request->validate([
+        $request->validate(
+            [
             'TipoRol'=>'required',
             'NickName'=>'required',
             'Email'=>'required',
@@ -53,7 +53,8 @@ class UsuarioController extends Controller
             'PasswordSALT'=>'required',
             'PasswordHASH'=>'required',
          
-        ]);
+            ]
+        );
 
        
         $data=new Usuario;
@@ -62,7 +63,7 @@ class UsuarioController extends Controller
         $data->NickName=$request->NickName;
         $data->Email=$request->Email;
         $data->NombreCompleto=$request->NombreCompleto;
-        $data->PasswordSALT=password_hash($request->PasswordSALT,PASSWORD_DEFAULT,array('cost' => 9));
+        $data->PasswordSALT=password_hash($request->PasswordSALT, PASSWORD_DEFAULT, array('cost' => 9));
         $data->PasswordHASH=password_hash($request->PasswordHASH, PASSWORD_DEFAULT, array('cost' => 9));
         
         $data->Activo = "1";
@@ -80,7 +81,7 @@ class UsuarioController extends Controller
     /**
      * Devuelve un usuario.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -91,7 +92,7 @@ class UsuarioController extends Controller
     /**
      * Muestra el formulario para editar un usuario
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -107,14 +108,15 @@ class UsuarioController extends Controller
      * Actualiza en Base datos el registro de la tabla usuario
      * .
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         
-        $request->validate([
+        $request->validate(
+            [
             'TipoRol'=>'required',
             'NickName'=>'required',
             'Email'=>'required',
@@ -122,7 +124,8 @@ class UsuarioController extends Controller
             'PasswordSALT'=>'required',
             'PasswordHASH'=>'required',
             
-        ]);
+            ]
+        );
 
        
         
@@ -132,7 +135,7 @@ class UsuarioController extends Controller
         $data->Email=$request->Email;
         $data->NombreCompleto=$request->NombreCompleto;
       
-        $data->PasswordSALT=password_hash($request->PasswordSALT,PASSWORD_DEFAULT,array('cost' => 9));
+        $data->PasswordSALT=password_hash($request->PasswordSALT, PASSWORD_DEFAULT, array('cost' => 9));
         $data->PasswordHASH=password_hash($request->PasswordHASH, PASSWORD_DEFAULT, array('cost' => 9));
 
         
@@ -148,7 +151,7 @@ class UsuarioController extends Controller
      * Elimina en Base de datos el registro de la tabla usuario
      * .
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

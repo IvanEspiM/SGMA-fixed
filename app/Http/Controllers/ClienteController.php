@@ -41,7 +41,7 @@ class ClienteController extends Controller
      * @edgarbasurto
      * Guarda los datos recibidos en la creacion de clientes nuevos
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -67,7 +67,7 @@ class ClienteController extends Controller
      * @edgarbasurto
      * Muestra el formulario de edicion de clientes existentes
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -81,8 +81,8 @@ class ClienteController extends Controller
      * @edgarbasurto
      * Actualiza el cliente en la base de datos
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -113,7 +113,7 @@ class ClienteController extends Controller
      * @edgarbasurto
      * Cambia de estado ACTIVO a INACTIVO
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -131,7 +131,7 @@ class ClienteController extends Controller
      * @Rafael1108
      * Busca la entidad clinete y retorna su coincidencia.
      *
-     * @param  string  $DNI
+     * @param  string $DNI
      * @return App\Models\Sujeto
      */
     public function getByDNI($DNI)

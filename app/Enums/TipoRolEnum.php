@@ -12,11 +12,11 @@ use BenSampo\Enum\Enum;
  */
 final class TipoRolEnum extends Enum
 {
-    const Visitante =   0;
-    const Administrador =   1;
-    const Gerente =   2;
-    const Mecanico = 3;
-    const Vendedor = 4;
+    const VISITANTE =   0;
+    const ADMINISTRADOR =   1;
+    const GERENTE =   2;
+    const MECANICO = 3;
+    const VENDEDOR = 4;
 
     public static function getNombre(int $value): string
     {

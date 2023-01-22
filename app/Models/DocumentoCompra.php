@@ -18,12 +18,12 @@ class DocumentoCompra extends Model
 
     protected $fillable = [
 
-		'NumeroCompra',
-		'FechaDocumento',
-		'NumeroDocumento',
-		'TipoDocumento',
-    	'SujetoId',
-    	'DNI',
+    'NumeroCompra',
+    'FechaDocumento',
+    'NumeroDocumento',
+    'TipoDocumento',
+        'SujetoId',
+        'DNI',
         'Proveedor',
         'ValorSinImpuestos',
         'ValorImpuestos',

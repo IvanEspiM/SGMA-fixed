@@ -43,7 +43,7 @@ class VehiculoController extends Controller
      * @edgarbasurto
      * Método que recibe los datos ingresados y los guarda en la base de datos
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -71,22 +71,22 @@ class VehiculoController extends Controller
      * @edgarbasurto
      * Método que muestra el formulario de edición de registros existentes
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         $vehiculo = $this->VehiculoModel::find($id);
         $clientes = new Sujeto();
-        return view('taller.vehiculos.edit')->with('vehiculo',$vehiculo)->with('clientes', $clientes->getListadoClientes());
+        return view('taller.vehiculos.edit')->with('vehiculo', $vehiculo)->with('clientes', $clientes->getListadoClientes());
     }
 
     /**
      * @edgarbasurto
      * Método que actualiza los datos de los registros en la base de datos
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -118,7 +118,7 @@ class VehiculoController extends Controller
      * @edgarbasurto
      * Método que cambia el estado de Activo a inactivo
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

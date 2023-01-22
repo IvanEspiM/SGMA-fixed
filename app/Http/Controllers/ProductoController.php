@@ -16,7 +16,6 @@ class ProductoController extends Controller
     }
 
     /**
-     * 
      * Muestra la vista de todos los productos.
      *
      * @return \Illuminate\Http\Response
@@ -43,7 +42,7 @@ class ProductoController extends Controller
     /**
      * Almacena el producto recién creada en el almacenamiento.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -77,7 +76,7 @@ class ProductoController extends Controller
     /**
      * Devuelve un producto.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -88,7 +87,7 @@ class ProductoController extends Controller
     /**
      * Muestra el formulario para editar un producto.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -104,8 +103,8 @@ class ProductoController extends Controller
     /**
      * Actualiza en Base datos el registro de la tabla producto.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -136,7 +135,7 @@ class ProductoController extends Controller
      * Elimina en Base de datos el registro de la tabla producto.
      * Tener presente que el método sólo cambia de estado ya que no se permite eliminar registros
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -154,7 +153,7 @@ class ProductoController extends Controller
     /**
      * Muestra el formulario modal para eliminar un producto.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public  function del($id)

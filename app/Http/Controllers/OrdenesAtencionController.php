@@ -48,7 +48,7 @@ class OrdenesAtencionController extends Controller
      * @edgarbasurto
      * Método que recibe los datos ingresados y los guarda en la base de datos
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)

@@ -45,7 +45,7 @@ class CategoriaController extends Controller
      * @Rafael1108
      * Almacena la categoría recién creada en el almacenamiento.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -75,7 +75,7 @@ class CategoriaController extends Controller
     /**
      * Devuelve una categoría.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -86,7 +86,7 @@ class CategoriaController extends Controller
     /**
      * Muestra el formulario para editar una categoria.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -100,8 +100,8 @@ class CategoriaController extends Controller
     /**
      * Actualiza en Base datos el registro de la tabla categoría.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -127,7 +127,8 @@ class CategoriaController extends Controller
     /**
      * Elimina en Base de datos el registro de la tabla categoría.
      * Tener presente que el método sólo cambia de estado ya que no se permite eliminar registros
-     * @param  int  $id
+     *
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -142,7 +143,7 @@ class CategoriaController extends Controller
     /**
      * Muestra el formulario modal para eliminar una categoria.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public  function del($id)

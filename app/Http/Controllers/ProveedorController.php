@@ -17,7 +17,6 @@ class ProveedorController extends Controller
     }
 
     /**
-     * 
      * Muestra la vista de todas las categorias.
      *
      * @return \Illuminate\Http\Response
@@ -40,7 +39,7 @@ class ProveedorController extends Controller
     /**
      * Almacena la categoría recién creada en el almacenamiento.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -63,7 +62,7 @@ class ProveedorController extends Controller
     /**
      * Devuelve una categoría.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -74,7 +73,7 @@ class ProveedorController extends Controller
     /**
      * Muestra el formulario para editar una categoria.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -87,8 +86,8 @@ class ProveedorController extends Controller
     /**
      * Actualiza en Base datos el registro de la tabla categoría.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -117,7 +116,8 @@ class ProveedorController extends Controller
     /**
      * Elimina en Base de datos el registro de la tabla categoría.
      * Tener presente que el método sólo cambia de estado ya que no se permite eliminar registros
-     * @param  int  $id
+     *
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -132,7 +132,7 @@ class ProveedorController extends Controller
     /**
      * Muestra el formulario modal para eliminar una categoria.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function del($id)
@@ -144,7 +144,7 @@ class ProveedorController extends Controller
     /**
      * Función que busca a un proveedor por el DNI.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function getByDNI($DNI)

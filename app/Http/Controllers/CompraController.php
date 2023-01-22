@@ -32,26 +32,29 @@ class CompraController extends Controller
     public function index(Request $request)
     {
         //
-        if ($request)
-    	{
-    		$query = trim($request->input('searchText'));
-    		//DB::raw() permite escribir sentencias SQL en crudo
-    		$compras = DB::table('documento_compras as dc')
-            ->join('sujetos as s', 's.id', '=', 'dc.SujetoId')
-            ->join('documento_compra_detalles as dcd', 'dc.id', '=', 'dcd.DocumentoCompraId')
-    		->join('productos as p', 'p.id', '=', 'dcd.ProductoId')
-    		->select('dc.id', 'dc.NumeroCompra','dc.FechaDocumento','dc.NumeroDocumento',
-                     's.id','s.DNI','dc.Proveedor','dcd.Impuestos','dc.ValorSinImpuestos',
-                     'dc.ValorImpuestos', DB::raw('sum(dcd.Cantidad * dcd.CostoUnitario) as Total'))
+        if ($request) {
+            $query = trim($request->input('searchText'));
+            //DB::raw() permite escribir sentencias SQL en crudo
+            $compras = DB::table('documento_compras as dc')
+                ->join('sujetos as s', 's.id', '=', 'dc.SujetoId')
+                ->join('documento_compra_detalles as dcd', 'dc.id', '=', 'dcd.DocumentoCompraId')
+                ->join('productos as p', 'p.id', '=', 'dcd.ProductoId')
+                ->select(
+                    'dc.id', 'dc.NumeroCompra', 'dc.FechaDocumento', 'dc.NumeroDocumento',
+                    's.id', 's.DNI', 'dc.Proveedor', 'dcd.Impuestos', 'dc.ValorSinImpuestos',
+                    'dc.ValorImpuestos', DB::raw('sum(dcd.Cantidad * dcd.CostoUnitario) as Total')
+                )
 
-            ->where('dc.NumeroDocumento', 'LIKE', "%$query%")
-    		->orderBy('dc.id', 'DESC')
-    		->groupBy('dc.id', 'dc.NumeroCompra','dc.FechaDocumento','dc.NumeroDocumento',
-                      's.id','s.DNI','dc.Proveedor','dcd.Impuestos','dc.ValorSinImpuestos',
-                      'dc.ValorImpuestos')
-    		->paginate(10);
+                ->where('dc.NumeroDocumento', 'LIKE', "%$query%")
+                ->orderBy('dc.id', 'DESC')
+                ->groupBy(
+                    'dc.id', 'dc.NumeroCompra', 'dc.FechaDocumento', 'dc.NumeroDocumento',
+                    's.id', 's.DNI', 'dc.Proveedor', 'dcd.Impuestos', 'dc.ValorSinImpuestos',
+                    'dc.ValorImpuestos'
+                )
+                ->paginate(10);
 
-    		return view('compras.compras.index', ['compras' => $compras, 'searchText' => $query]);
+            return view('compras.compras.index', ['compras' => $compras, 'searchText' => $query]);
         }
     }
 
@@ -69,7 +72,7 @@ class CompraController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -80,7 +83,7 @@ class CompraController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -91,7 +94,7 @@ class CompraController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -102,8 +105,8 @@ class CompraController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -114,7 +117,7 @@ class CompraController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

@@ -20,10 +20,12 @@ class Sujeto extends Model
     {
         return DB::table('sujetos')
             ->select('*')
-            ->where([
+            ->where(
+                [
                 ['Activo', '=', '1'],
                 ['TipoSujeto', '=', '1'],
-            ])
+                ]
+            )
             ->get();
     }
 
@@ -36,10 +38,12 @@ class Sujeto extends Model
     {
         return DB::table('sujetos')
             ->select('*')
-            ->where([
+            ->where(
+                [
                 ['Activo', '=', '1'],
                 ['TipoSujeto', '=', '2'],
-            ])
+                ]
+            )
             ->get();
     }
 
@@ -51,10 +55,12 @@ class Sujeto extends Model
     {
         return DB::table('sujetos')
             ->select('*')
-            ->where([
+            ->where(
+                [
                 ['DNI', 'like',  $DNI],
                 ['TipoSujeto', '=', '2'],
-            ])
+                ]
+            )
             ->first();
     }
 
@@ -66,10 +72,12 @@ class Sujeto extends Model
     {
         return DB::table('sujetos')
             ->select('*')
-            ->where([
+            ->where(
+                [
                 ['DNI', 'like',  $DNI],
                 ['TipoSujeto', '=', '1'],
-            ])
+                ]
+            )
             ->first();
     }
 }

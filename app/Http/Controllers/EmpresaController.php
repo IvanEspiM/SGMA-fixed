@@ -42,7 +42,7 @@ class EmpresaController extends Controller
     /**
      * Almacena la categoría recién creada en el almacenamiento.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -54,7 +54,7 @@ class EmpresaController extends Controller
      * @Rafael1108
      * Devuelve la empresa por default.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -67,7 +67,7 @@ class EmpresaController extends Controller
      * @Rafael1108
      * Muestra el formulario para editar una Empresa.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -79,8 +79,8 @@ class EmpresaController extends Controller
      * @Rafael1108
      * Actualiza en Base datos el registro de la tabla empresa .
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -107,8 +107,8 @@ class EmpresaController extends Controller
      * @Rafael1108
      * Elimina en Base de datos el registro de la tabla empresa.
      * Tener presente que el método sólo cambia de estado ya que no se permite eliminar registros
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param      int $id
+     * @return     \Illuminate\Http\Response
      */
     public function destroy($id)
     {

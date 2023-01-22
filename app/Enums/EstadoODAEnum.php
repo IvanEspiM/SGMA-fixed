@@ -12,22 +12,22 @@ use BenSampo\Enum\Enum;
  */
 final class EstadoODAEnum extends Enum
 {
-    const Activo = 1;
-    const EnAtecion = 2;
-    const Cerrado = 3;
-    const NoAtendido = 4;
+    const ACTIVO = 1;
+    const ENATENCION = 2;
+    const CERRADO = 3;
+    const NOATENDIDO = 4;
 
     public static function getNombre(int $value): string
     {
         switch ($value) {
-            case self::EnAtecion:
-                return 'En Atención';
+        case self::EnAtecion:
+            return 'En Atención';
                 break;
-            case self::NoAtendido:
-                return 'No Atendido';
+        case self::NoAtendido:
+            return 'No Atendido';
                 break;
-            default:
-                return self::getKey($value);
+        default:
+            return self::getKey($value);
         }
     }
 }

@@ -11,9 +11,9 @@ use BenSampo\Enum\Enum;
  */
 final class EstadoCompraEnum extends Enum
 {
-    const Activo = 1;
-    const Cerrado = 2;
-    const Anulado = 3;
+    const ACTIVO = 1;
+    const CERRADO = 2;
+    const ANULADO = 3;
 
     public static function getNombre(int $value): string
     {

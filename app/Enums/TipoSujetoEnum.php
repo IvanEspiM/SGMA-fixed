@@ -10,8 +10,8 @@ use BenSampo\Enum\Enum;
  */
 final class TipoSujetoEnum extends Enum
 {
-    const Cliente = 1;
-    const Proveedor = 2;
+    const CLIENTE = 1;
+    const PROVEEDOR = 2;
 
     public static function getNombre(int $value): string
     {

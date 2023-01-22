@@ -14,7 +14,6 @@ class TipoServicioController extends Controller
     }
 
     /**
-     * 
      * Muestra la vista de todas las categorias.
      *
      * @return \Illuminate\Http\Response
@@ -37,7 +36,7 @@ class TipoServicioController extends Controller
     /**
      * Almacena la categoría recién creada en el almacenamiento.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -54,7 +53,7 @@ class TipoServicioController extends Controller
     /**
      * Devuelve una categoría.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -65,7 +64,7 @@ class TipoServicioController extends Controller
     /**
      * Muestra el formulario para editar una categoria.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -77,8 +76,8 @@ class TipoServicioController extends Controller
     /**
      * Actualiza en Base datos el registro de la tabla categoría.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -100,7 +99,7 @@ class TipoServicioController extends Controller
     /**
      * Elimina en Base de datos el registro de la tabla categoría.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
