@@ -9,9 +9,10 @@ use Illuminate\Support\Facades\DB;
 class Categoria extends Model
 {
     use HasFactory;
+
     /**
      * @AndresPrado
-     * Método para obtener el listado de los categorias activas. 
+     * Método para obtener el listado de los categorias activas.
      */
     public function getListadoActivos()
     {
@@ -23,7 +24,7 @@ class Categoria extends Model
 
     /**
      * @Rafael1108
-     * Método para obtener un vista del listado de las categorías activas, incluye los tipos de servicio. 
+     * Método para obtener un vista del listado de las categorías activas, incluye los tipos de servicio.
      */
     public function getListadoActivoConTipoServicio()
     {

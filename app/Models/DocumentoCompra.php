@@ -10,11 +10,11 @@ class DocumentoCompra extends Model
 {
     use HasFactory;
 
-    protected $table = 'documento_compras'; 
+    protected $table = 'documento_compras';
 
     protected $primaryKey = 'id';
 
-    public $timestamps=false;
+    public $timestamps = false;
 
     protected $fillable = [
 
@@ -32,5 +32,5 @@ class DocumentoCompra extends Model
 
     ];
 
-    protected $guarded=[];
+    protected $guarded = [];
 }
