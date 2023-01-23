@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-
 class Sujeto extends Model
 {
     use HasFactory;
@@ -32,7 +31,7 @@ class Sujeto extends Model
 
     /**
      * @Rafael1108
-     * Método para obtener un vista del listado de proveedores activos. 
+     * Método para obtener un vista del listado de proveedores activos.
      */
     public function getListadoProveedores()
     {
@@ -49,7 +48,7 @@ class Sujeto extends Model
 
     /**
      * @Rafael1108
-     * Método para obtener un vista del listado de proveedores activos. 
+     * Método para obtener un vista del listado de proveedores activos.
      */
     public function getProveedorByDNI($DNI)
     {

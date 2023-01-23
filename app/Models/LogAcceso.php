@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class LogAcceso extends Model
 {
     use HasFactory;
+
     public $timestamps = false;
 }

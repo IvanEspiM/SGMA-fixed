@@ -25,23 +25,23 @@ class CompraFormRequest extends FormRequest
     {
         return [
             //
-        'NumeroCompra'=> 'required',
-		'FechaDocumento'=> 'required',
-		'NumeroDocumento'=> 'required',
-		'TipoDocumento'=> 'required',
-    	'SujetoId'=> 'required',
-    	'DNI'=> 'required',
-        'Proveedor'=> 'required',
-        'ValorSinImpuestos'=> 'required',
-        'ValorImpuestos'=> 'required',
-        'ValorTotal'=> 'required',
-        'EstadoCompra'=> 'required',
-        'DocumentoCompraId'=> 'required',
-		'ProductoId '=> 'required',
-		'Producto'=> 'required',
-    	'Cantidad'=> 'required',
-    	'CostoUnitario'=> 'required',
-        'Impuestos'=> 'required'
+        'NumeroCompra' => 'required',
+        'FechaDocumento' => 'required',
+        'NumeroDocumento' => 'required',
+        'TipoDocumento' => 'required',
+        'SujetoId' => 'required',
+        'DNI' => 'required',
+        'Proveedor' => 'required',
+        'ValorSinImpuestos' => 'required',
+        'ValorImpuestos' => 'required',
+        'ValorTotal' => 'required',
+        'EstadoCompra' => 'required',
+        'DocumentoCompraId' => 'required',
+        'ProductoId' => 'required',
+        'Producto' => 'required',
+        'Cantidad' => 'required',
+        'CostoUnitario' => 'required',
+        'Impuestos' => 'required'
         ];
     }
 }

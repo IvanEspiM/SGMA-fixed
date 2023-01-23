@@ -12,7 +12,7 @@ class Usuario extends Model
 
     /**
      * @Rafael1108
-     * Método para obtener el listado de los tipos de servicios. 
+     * Método para obtener el listado de los tipos de servicios.
      */
     public function getListadoActivos()
     {

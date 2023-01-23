@@ -12,7 +12,7 @@ class Producto extends Model
 
     /**
      * @Rafael1108
-     * Método para obtener el listado de los productos activos. 
+     * Método para obtener el listado de los productos activos.
      */
     public function getListadoActivos()
     {
@@ -22,7 +22,7 @@ class Producto extends Model
     }
     /**
      * @Rafael1108
-     * Método para obtener el listado de los productos activos. 
+     * Método para obtener el listado de los productos activos.
      */
     public function getListadoActivoConCategorias()
     {
