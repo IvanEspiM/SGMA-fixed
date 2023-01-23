@@ -32,7 +32,7 @@ class UsuarioController extends Controller
     {
         return view('parametros.usuario.create');
     }
-    
+
     /**
      * Almacena la usuario
      *  recién creada en el almacenamiento.
@@ -42,40 +42,36 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        
-        
+
+
         $request->validate(
             [
-            'TipoRol'=>'required',
-            'NickName'=>'required',
-            'Email'=>'required',
-            'NombreCompleto'=>'required',
-            'PasswordSALT'=>'required',
-            'PasswordHASH'=>'required',
-         
+            'TipoRol' => 'required',
+            'NickName' => 'required',
+            'Email' => 'required',
+            'NombreCompleto' => 'required',
+            'PasswordSALT' => 'required',
+            'PasswordHASH' => 'required',
+
             ]
         );
 
-       
-        $data=new Usuario;
-        $data->id=$request->id;
-        $data->TipoRol=$request->TipoRol;
-        $data->NickName=$request->NickName;
-        $data->Email=$request->Email;
-        $data->NombreCompleto=$request->NombreCompleto;
-        $data->PasswordSALT=password_hash($request->PasswordSALT, PASSWORD_DEFAULT, array('cost' => 9));
-        $data->PasswordHASH=password_hash($request->PasswordHASH, PASSWORD_DEFAULT, array('cost' => 9));
-        
+
+        $data = new Usuario();
+        $data->id = $request->id;
+        $data->TipoRol = $request->TipoRol;
+        $data->NickName = $request->NickName;
+        $data->Email = $request->Email;
+        $data->NombreCompleto = $request->NombreCompleto;
+        $data->PasswordSALT = password_hash($request->PasswordSALT, PASSWORD_DEFAULT, array('cost' => 9));
+        $data->PasswordHASH = password_hash($request->PasswordHASH, PASSWORD_DEFAULT, array('cost' => 9));
+
         $data->Activo = "1";
         $data->UsuarioCreacion = "1";
         $data->UserCreated = "1";
-      
+
         $data->save();
         return redirect('/usuarios')->with('Los datos fueron agregados correctamente.');
-        
-
-        
-        
     }
 
     /**
@@ -97,7 +93,7 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-        
+
         $ObjUsuario = $this->UsuarioModel::find($id);
         $usuarios = new Usuario();
 
@@ -114,35 +110,35 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         $request->validate(
             [
-            'TipoRol'=>'required',
-            'NickName'=>'required',
-            'Email'=>'required',
-            'NombreCompleto'=>'required',
-            'PasswordSALT'=>'required',
-            'PasswordHASH'=>'required',
-            
+            'TipoRol' => 'required',
+            'NickName' => 'required',
+            'Email' => 'required',
+            'NombreCompleto' => 'required',
+            'PasswordSALT' => 'required',
+            'PasswordHASH' => 'required',
+
             ]
         );
 
-       
-        
-        $data=Usuario::find($id);
-        $data->TipoRol=$request->TipoRol;
-        $data->NickName=$request->NickName;
-        $data->Email=$request->Email;
-        $data->NombreCompleto=$request->NombreCompleto;
-      
-        $data->PasswordSALT=password_hash($request->PasswordSALT, PASSWORD_DEFAULT, array('cost' => 9));
-        $data->PasswordHASH=password_hash($request->PasswordHASH, PASSWORD_DEFAULT, array('cost' => 9));
 
-        
+
+        $data = Usuario::find($id);
+        $data->TipoRol = $request->TipoRol;
+        $data->NickName = $request->NickName;
+        $data->Email = $request->Email;
+        $data->NombreCompleto = $request->NombreCompleto;
+
+        $data->PasswordSALT = password_hash($request->PasswordSALT, PASSWORD_DEFAULT, array('cost' => 9));
+        $data->PasswordHASH = password_hash($request->PasswordHASH, PASSWORD_DEFAULT, array('cost' => 9));
+
+
         $data->Activo = "1";
         $data->UsuarioCreacion = "1";
         $data->UserCreated = "0";
-       
+
         $data->save();
         return redirect('/usuarios')->with('Datos actualizados correctamente.');
     }
@@ -161,8 +157,7 @@ class UsuarioController extends Controller
         $data->Activo =  0;
         $data->save();
 
-        
+
         return redirect('usuarios');
     }
-   
 }

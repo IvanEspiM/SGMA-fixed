@@ -44,9 +44,9 @@ class ReportesController extends Controller
     }
 
     /**
-     * 
+     *
      * @Rafael1108
-     * Muestra formulario modales de parámetros. 
+     * Muestra formulario modales de parámetros.
      *
      * @param  int $id
      * @return \Illuminate\Http\Response
@@ -54,14 +54,13 @@ class ReportesController extends Controller
     public function show($id)
     {
         switch ($id) {
-
-        case 2:
-            /* retorna la vista en funcion del id del reporte que se requiere*/
-            return view('reportes.nuevosClientes');
+            case 2:
+                /* retorna la vista en funcion del id del reporte que se requiere*/
+                return view('reportes.nuevosClientes');
                 break;
 
-        default:
-            return response()->json(['error' => 'Reporte no encontrado!'], 500);
+            default:
+                return response()->json(['error' => 'Reporte no encontrado!'], 500);
         }
     }
 
@@ -101,7 +100,7 @@ class ReportesController extends Controller
 
 
     /**
-     * 
+     *
      * @Rafael1108
      * Método POST para obtener los reportes renderizados y exportables.
      *
@@ -112,22 +111,21 @@ class ReportesController extends Controller
     public function showReport(Request $request, $id)
     {
         switch ($id) {
-
-        case 2:
-            /* retorna la vista en funcion del id del reporte que se requiere*/
-            return $this->rptNuevosClientes($request);
-        default:
-            return response()->json(['error' => 'Reporte no encontrado!'], 500);
+            case 2:
+                /* retorna la vista en funcion del id del reporte que se requiere*/
+                return $this->rptNuevosClientes($request);
+            default:
+                return response()->json(['error' => 'Reporte no encontrado!'], 500);
         }
     }
 
     /**
-     * 
+     *
      * @Rafael1108
      * Método para Generar reporte de Nuevos clientes
      * la funcion requeire el request del POST.
      *
-     * @param  \Illuminate\Http\Request $request 
+     * @param  \Illuminate\Http\Request $request
      * @return Barryvdh\DomPDF\Facade\Pdf
      */
     private function rptNuevosClientes(Request $request)
@@ -143,7 +141,7 @@ class ReportesController extends Controller
 
             $lblrango = "<strong>Desde:</strong> " . $dtDesde . " <strong>Hasta:</strong> " . $dtHasta;
             $data = DB::table('sujetos')
-                ->select("created_at as FechaCrecion", "DNI", "DNI",  "Nombre",  "Apellido", "Telefono", "Email", "Direccion")
+                ->select("created_at as FechaCrecion", "DNI", "DNI", "Nombre", "Apellido", "Telefono", "Email", "Direccion")
                 ->where('Activo', '=', 1)
                 ->where('TipoSujeto', '=', 1)
                 ->whereBetween('created_at', [$dtDesde, $dtHasta])
@@ -155,10 +153,10 @@ class ReportesController extends Controller
 
             $lblrango = "<strong>Mes:</strong> " . date("F", mktime(0, 0, 0, (int) $mes, 10))  . " <strong>Año:</strong> " . $anio;
             $data = DB::table('sujetos')
-                ->select("created_at as FechaCrecion", "DNI", "DNI",  "Nombre",  "Apellido", "Telefono", "Email", "Direccion")
+                ->select("created_at as FechaCrecion", "DNI", "DNI", "Nombre", "Apellido", "Telefono", "Email", "Direccion")
                 ->where('Activo', '=', 1)
                 ->where('TipoSujeto', '=', 1)
-                ->whereRaw('month(created_at) =?',  [(int) $mes])
+                ->whereRaw('month(created_at) =?', [(int) $mes])
                 ->whereRaw('year(created_at)=?', [(int) $anio])
                 ->get();
         }

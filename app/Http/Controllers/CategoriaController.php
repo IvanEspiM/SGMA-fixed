@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\Categoria;
 use App\Models\TipoServicio;
 
-
 class CategoriaController extends Controller
 {
     protected $CategoriaModel;
@@ -51,7 +50,6 @@ class CategoriaController extends Controller
     public function store(Request $request)
     {
         if ($request->get('txtTipoServicio') > 0) {
-
             $Descripcion = "";
             if (!is_null($request->get('txtDescripcion'))) {
                 $Descripcion = $request->get('txtDescripcion');
@@ -59,7 +57,8 @@ class CategoriaController extends Controller
 
             $cat_new = new Categoria();
 
-            $cat_new->TipoServicioId = $request->get('txtTipoServicio');;
+            $cat_new->TipoServicioId = $request->get('txtTipoServicio');
+            ;
             $cat_new->Nombre = $request->get('txtNombre');
             $cat_new->Descripcion =  $Descripcion;
             $cat_new->Activo = "1";
@@ -112,7 +111,8 @@ class CategoriaController extends Controller
             $Descripcion = $request->get('txtDescripcion');
         }
         $categoria_edit = $this->CategoriaModel::find($id);
-        $categoria_edit->TipoServicioId = $request->get('txtTipoServicio');;
+        $categoria_edit->TipoServicioId = $request->get('txtTipoServicio');
+        ;
         $categoria_edit->Nombre = $request->get('txtNombre');
         $categoria_edit->Descripcion =  $Descripcion;
         $categoria_edit->Activo =  1;
@@ -146,7 +146,7 @@ class CategoriaController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public  function del($id)
+    public function del($id)
     {
         $ObjCategoria = $this->CategoriaModel::find($id);
         return view('inventario.categorias.delete')->with('ObjCategoria', $ObjCategoria);

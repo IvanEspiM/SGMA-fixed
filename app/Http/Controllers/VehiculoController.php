@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\Vehiculo;
 use App\Models\Sujeto;
 
-
 class VehiculoController extends Controller
 {
     protected $VehiculoModel;
@@ -107,7 +106,7 @@ class VehiculoController extends Controller
 
         $vehiculo->save();
 
-    
+
         if ($vehiculo->save() == 1) {
             return redirect('/vehiculos')->with('actualizar', 'ok');
         }
@@ -128,12 +127,10 @@ class VehiculoController extends Controller
         $vehiculo->save();
 
         return redirect('/vehiculos')->with('eliminar', 'ok');
-
     }
 
     public function getByPlaca($placa)
     {
         return $this->VehiculoModel->getVehiculoByPlaca($placa);
     }
-
 }

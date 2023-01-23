@@ -36,7 +36,6 @@ class ProductoController extends Controller
 
         $Categoria = new Categoria();
         return view('inventario.productos.create')->with('categorias', $Categoria->getListadoActivos());
-
     }
 
     /**
@@ -49,20 +48,20 @@ class ProductoController extends Controller
     {
         //
         if ($request->get('CategoriaId') > 0) {
-
             $Descripcion = "";
             if (!is_null($request->get('Descripcion'))) {
                 $Descripcion = $request->get('Descripcion');
             }
 
             $producto_edit = new Producto();
-            $producto_edit->CategoriaId  = $request->get('CategoriaId');;
+            $producto_edit->CategoriaId  = $request->get('CategoriaId');
+            ;
             $producto_edit->Codigo = $request->get('Codigo');
             $producto_edit->Nombre = $request->get('Nombre');
             $producto_edit->Descripcion =  $Descripcion;
             $producto_edit->NumeroParte = $request->get('NumeroParte');
             $producto_edit->Precio = $request->get('Precio');
-            $producto_edit->Costo = $request->get('Costo');      
+            $producto_edit->Costo = $request->get('Costo');
             $producto_edit->Activo = "1";
             $producto_edit->UserCreated = 0;
             $producto_edit->save();
@@ -97,7 +96,6 @@ class ProductoController extends Controller
         $Categoria = new Categoria();
 
         return view('inventario.productos.edit')->with('ObjProducto', $ObjProducto)->with('categorias', $Categoria->getListadoActivos());
-
     }
 
     /**
@@ -116,17 +114,17 @@ class ProductoController extends Controller
             $Descripcion = $request->get('Descripcion');
         }
         $producto_edit = $this->ProductoModel::find($id);
-        $producto_edit->CategoriaId  = $request->get('CategoriaId');;
+        $producto_edit->CategoriaId  = $request->get('CategoriaId');
+        ;
         $producto_edit->Codigo = $request->get('Codigo');
         $producto_edit->Nombre = $request->get('Nombre');
         $producto_edit->Descripcion =  $Descripcion;
         $producto_edit->NumeroParte = $request->get('NumeroParte');
         $producto_edit->Precio = $request->get('Precio');
-        $producto_edit->Costo = $request->get('Costo');      
+        $producto_edit->Costo = $request->get('Costo');
         $producto_edit->Activo =  1;
         $producto_edit->UserUpdated = 0;
         if ($producto_edit->save() == 1) {
-            
         }
         return redirect('/productos');
     }
@@ -146,8 +144,6 @@ class ProductoController extends Controller
         $producto_edit->save();
 
         return redirect('/productos');
-        
-        
     }
 
     /**
@@ -156,10 +152,9 @@ class ProductoController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public  function del($id)
+    public function del($id)
     {
         $ObjProducto = $this->ProductoModel::find($id);
         return view('inventario.productos.delete')->with('ObjProducto', $ObjProducto);
     }
-
 }

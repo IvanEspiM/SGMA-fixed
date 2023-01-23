@@ -93,7 +93,6 @@ class TipoServicioController extends Controller
         } else {
             return redirect('/servicios')->with('actualizar', 'failed');
         }
-
     }
 
     /**
