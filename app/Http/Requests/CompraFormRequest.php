@@ -37,7 +37,7 @@ class CompraFormRequest extends FormRequest
         'ValorTotal' => 'required',
         'EstadoCompra' => 'required',
         'DocumentoCompraId' => 'required',
-        'ProductoId' => 'required',
+        'ProductoId ' => 'required',
         'Producto' => 'required',
         'Cantidad' => 'required',
         'CostoUnitario' => 'required',
