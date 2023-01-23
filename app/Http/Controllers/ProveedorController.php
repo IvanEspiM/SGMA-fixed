@@ -6,7 +6,6 @@ use App\Exceptions\Notificacion;
 use Illuminate\Http\Request;
 use App\Models\Sujeto;
 
-
 class ProveedorController extends Controller
 {
     protected $ProveedorModel;
