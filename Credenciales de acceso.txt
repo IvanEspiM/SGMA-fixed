@@ -1,0 +1,15 @@
+Usuario #1
+User: admin@hotmail.com
+Contraseña: admin
+
+Usuario #2
+User: gerente@hotmail.com
+Contraseña: gerente
+
+Usuario #3
+User: vendedor@hotmail.com
+Contraseña: vendedor
+
+Usuario #4
+User: mecanico@hotmail.com
+Contraseña: mecanico
