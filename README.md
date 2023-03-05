@@ -44,7 +44,7 @@ $ git clone https://github.com/UG-CSW-SGMA/SGMA.git
 ```
 $ composer update 
 ``` 
-Este paso descargará y creará la carpeta <strong>Ventor</strong>
+Este paso descargará y creará la carpeta <strong>Vendor</strong>
 
 4. Copiar el archivo <strong>model.php</strong> que se encuentra en carpeta raíz y pegar en la ruta: 
 ```
